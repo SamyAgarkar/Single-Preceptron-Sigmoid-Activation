@@ -65,7 +65,7 @@ public class ANN {
         int size = 3;
         int Repeatations = 100000;
         float[] weights = {0f , 0f , 0f};
-        NeuralNet NN = new NeuralNet(size,weights,0.0001f);
+        NeuralNet NN = new NeuralNet(size,weights,0.01f);
         
         for(int j=0;j<Repeatations;j++){
             for(int i=0;i<size;i++){
