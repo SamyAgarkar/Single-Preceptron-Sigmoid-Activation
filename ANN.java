@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ann;
 
 /**
@@ -45,8 +40,7 @@ class NeuralNet{
         float out = 1/(1 + (float)Math.exp(-functionInput));
         
         for(int i=0;i<InputSize;i++){
-            Nodes[i].Weight +=  input[i]*(output-out)*out*(1-out);
-            //System.out.println(out+"  "+Nodes[0].Weight+"  "+Nodes[1].Weight+"  "+Nodes[2].Weight);
+            Nodes[i].Weight +=  LearningRate*input[i]*(output-out)*out*(1-out);
         }
         
     }
@@ -63,12 +57,8 @@ class NeuralNet{
 
 public class ANN {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
+
         System.out.println("****Artificial Neural Network (Single Node)****");
         int[][] train_input = {{0,1,1},{1,0,0},{1,1,1},{0,1,1}};
         int[] train_output = {0 , 1 , 1 , 0};
